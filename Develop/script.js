@@ -30,7 +30,7 @@ function generatePassword() {
   }else{
     //don't include numbers
   }
-  let specCharac - prompt("Special Characters?");
+  let specCharac = prompt("Special Characters?");
   if (specCharac == true){
     //include special characters
   }else{
