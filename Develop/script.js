@@ -7,9 +7,11 @@ const sym = ["!", "@", "#", "$", "%", "^", "&", "*", "/", "<", ">", "?", "/"];
 const num = [0,1,2,3,4,5,6,7,8,9];
 
 // Get references to the #generate element
-let lengthInput = window.prompt("Please enter length of password desired.")
-let includeLowercase = window.confirm("Include lowercase letters?")
-let includeUppercase = window.confirm("Incluce uppercase letters?")
+let lengthInput = window.prompt("Please enter length of password desired.");
+let includeLowercase = window.confirm("Include lowercase letters?");
+let includeUppercase = window.confirm("Incluce uppercase letters?");
+let includeSym = window.confirm("Include symbols?");
+let includeNum = window.confirm("Include numbers?")
 
 
 // Write password to the #password input
@@ -28,18 +30,18 @@ if (includeLowercase === true){
   for (let i = 0; i < lengthInput; i++) {
   let randomNum = Math.floor(Math.random()*lowercaseLetters.length);
   let randomLLetter = lowercaseLetters[randomNum];
-  //password += randomLetter;
+  password += randomLetter;
 }
 }
-function 
+
 if (includeUppercase === true){
   for (let i = 0; i < lengthInput; i++) {
     let randomNum = Math.floor(Math.random()*uppercaseLetters.length);
-  let randomULetter = uppercaseLetters[randomNum];
-  //password += randomLetter;
+    let randomULetter = uppercaseLetters[randomNum];
+    password += randomLetter;
   }
 }
-let 
+if
 return password;
 }
 
