@@ -44,46 +44,64 @@ function writePassword() {
 
 }
 
-function generatePassword(passwordLength, lowercase, uppercase, numbers, specCharac) {
+function generatePassword(passwordLength, includeLowercase, includeUppercase, includeNum, includeSym) {
   let password = "";
- 
+  
+  let passwordLength = prompt("Please enter length of password desired.")
+    if (passwordLength >= 128){
+      alert("Password must be less than 128 characters"); 
+      prompt("Please enter password length less than 128 characters.");
+    }
 
   let includeLowercase = confirm("Do you want to include lowercase?")
-    if(includeLowercase){
-      for (let i = 0; i < lengthInput; i++) {
-        let randomNumber = Math.floor(Math.random()*lowercaseLetters.length);
-        let randomLLetter = lowercaseLetters[randomNumber];
-        password += randomLLetter;
-      }
+    if(includeLowercase === true){
+      startingArray.concat(lowercaseLetters);
+    }else{
+      startingArray;
+      // for (let i = 0; i < lengthInput; i++) {
+      //   let randomNumber = Math.floor(Math.random()*lowercaseLetters.length);
+      //   let randomLLetter = lowercaseLetters[randomNumber];
+      //   password += randomLLetter;
+      // }
     }
   
   
 let includeUppercase = confirm("Do you want to include uppercase letters?")
-  if(includeUppercase){
-    for (let i = 0; i < lengthInput; i++) {
-      let randomNumber = Math.floor(Math.random()*uppercaseLetters.length);
-      let randomULetter = uppercaseLetters[randomNumber];
-      password += randomULetter;
-    }
+  if(includeUppercase === true){
+    includeLowercase.concat(uppercaseLetters);
+  }else{
+    includeLowercase;
+    // for (let i = 0; i < lengthInput; i++) {
+    //   let randomNumber = Math.floor(Math.random()*uppercaseLetters.length);
+    //   let randomULetter = uppercaseLetters[randomNumber];
+    //   password += randomULetter;
+    // }
   }
 
 let includeSym = confirm("Do you want to include symbols?")
-  if (includeSym){
-  for (let i = 0; i < lengthInput; i++) {
-    let randomNumber = Math.floor(Math.random()*sym.length);
-    let randomSym = includeSym[randomNumber];
-    password += randomSym;
-  }
+  if (includeSym === true){
+    includeLowercase.concat(includeSym);
+  }else{
+    includeUppercase;
+  // for (let i = 0; i < lengthInput; i++) {
+  //   let randomNumber = Math.floor(Math.random()*sym.length);
+  //   let randomSym = includeSym[randomNumber];
+  //   password += randomSym;
+  // }
 }
 
 let includeNum = confirm("Do you want to include numbers?")
-  if (includeNum){
-  for (let i = 0; i < lengthInput; i++) {
+  if (includeNum === true){
+    includeUppercase.concat(includeNum);
+  }else{
+    includeSym;
+    for (let i = 0; i < lengthInput; i++) {
     let randomNumber = Math.floor(Math.random()*sym.length);
     let randomNum = includeNum[randomNumber];
     password += randomNum;
   }
 }
+
 
 return password;
 }
