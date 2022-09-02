@@ -70,7 +70,7 @@ let includeUppercase = confirm("Do you want to include uppercase letters?")
   if(includeUppercase === true){
     includeLowercase.concat(uppercaseLetters);
   }else{
-    includeLowercase;
+    startingArray;
     // for (let i = 0; i < lengthInput; i++) {
     //   let randomNumber = Math.floor(Math.random()*uppercaseLetters.length);
     //   let randomULetter = uppercaseLetters[randomNumber];
@@ -95,14 +95,14 @@ let includeNum = confirm("Do you want to include numbers?")
     includeUppercase.concat(includeNum);
   }else{
     includeSym;
-    for (let i = 0; i < lengthInput; i++) {
-    let randomNumber = Math.floor(Math.random()*sym.length);
-    let randomNum = includeNum[randomNumber];
-    password += randomNum;
   }
+  
+  for (let i = 0; i < lengthInput; i++) {
+  let randomNumber = Math.floor(Math.random()*sym.length);
+  let randomNum = includeNum[randomNumber];
+  password += randomNum;
 }
-
-
+    
 return password;
 }
 
@@ -115,4 +115,4 @@ return password;
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword)
+generateBtn.addEventListener("click", generatePassword)
