@@ -1,24 +1,30 @@
 // Assignment code here
 
 var generateBtn = document.querySelector("#generate");
+const startingArray = [];
 const lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 const sym = ["!", "@", "#", "$", "%", "^", "&", "*", "/", "<", ">", "?", "/"];
 const num = [0,1,2,3,4,5,6,7,8,9];
-let onlyLetters = lowercaseLetters.concat(uppercaseLetters)
-let letterSym = onlyLetters.concat(sym)
-console.log(onlyLetters)
-console.log(letterSym)
+// const onlyLetters = lowercaseLetters.concat(uppercaseLetters);
+// const letterSym = onlyLetters.concat(sym);
+// const everyThing = letterSym.concat(num);
+// const upperSym = uppercaseLetters.concat(sym);
+// const uppperSymNum = upperSym.concat(num);
+// const symNum = sym.concat(num);
+// const lowerSymNum = symNum.concat(lowercaseLetters);
+
+
 
 // Get references to the #generate element
-let lengthInput = window.prompt("Please enter length of password desired.");
-if (lengthInput >= 128){
-  alert("Password cannot be longer than 128 characters!");
-}
-let includeLowercase = window.confirm("Include lowercase letters?");
-let includeUppercase = window.confirm("Incluce uppercase letters?");
-let includeSym = window.confirm("Include symbols?");
-let includeNum = window.confirm("Include numbers?");
+// let lengthInput = window.prompt("Please enter length of password desired.");
+// if (lengthInput >= 128){
+//   alert("Password cannot be longer than 128 characters!");
+// }
+// let includeLowercase = window.confirm("Include lowercase letters?");
+// let includeUppercase = window.confirm("Incluce uppercase letters?");
+// let includeSym = window.confirm("Include symbols?");
+// let includeNum = window.confirm("Include numbers?");
 
 let passwordObject = {
   length: 0,
@@ -40,31 +46,29 @@ function writePassword() {
 
 function generatePassword(passwordLength, lowercase, uppercase, numbers, specCharac) {
   let password = "";
-  if (includeLowercase === true){
-    for (let i = 0; i < lengthInput; i++) {
-      let randomNumber = Math.floor(Math.random()*lowercaseLetters.length);
-      let randomLLetter = lowercaseLetters[randomNumber];
-      password += randomLLetter;
+ 
+
+  let includeLowercase = confirm("Do you want to include lowercase?")
+    if(includeLowercase){
+      for (let i = 0; i < lengthInput; i++) {
+        let randomNumber = Math.floor(Math.random()*lowercaseLetters.length);
+        let randomLLetter = lowercaseLetters[randomNumber];
+        password += randomLLetter;
+      }
     }
-  }
   
-  if (includeUppercase === true){
+  
+let includeUppercase = confirm("Do you want to include uppercase letters?")
+  if(includeUppercase){
     for (let i = 0; i < lengthInput; i++) {
       let randomNumber = Math.floor(Math.random()*uppercaseLetters.length);
       let randomULetter = uppercaseLetters[randomNumber];
       password += randomULetter;
     }
   }
-  
-if (includeLowercase === true && includeUppercase ==true){
-    for (let i = 0; i < lengthInput; i++) {
-      let randomNumber = Math.floor(Math.random()*onlyLetters.length);
-      let randomULetter = onlyLetters[randomNumber];
-      password += randomLetters;
-  }
-}
 
-if (includeSym === true){
+let includeSym = confirm("Do you want to include symbols?")
+  if (includeSym){
   for (let i = 0; i < lengthInput; i++) {
     let randomNumber = Math.floor(Math.random()*sym.length);
     let randomSym = includeSym[randomNumber];
@@ -72,7 +76,8 @@ if (includeSym === true){
   }
 }
 
-if (includeNum === true){
+let includeNum = confirm("Do you want to include numbers?")
+  if (includeNum){
   for (let i = 0; i < lengthInput; i++) {
     let randomNumber = Math.floor(Math.random()*sym.length);
     let randomNum = includeNum[randomNumber];
