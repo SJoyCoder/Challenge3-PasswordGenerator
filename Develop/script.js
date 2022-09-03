@@ -13,15 +13,6 @@ var num = [0,1,2,3,4,5,6,7,8,9];
 // Get references to the #generate element
 
 
-// let passwordObject = {
-//   length: 0,
-//   upper: true,
-//   lower: true,
-//   symbols: true,
-//   number:true,
-// }
-
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -39,6 +30,10 @@ function generatePassword(passwordLength, includeLowercase, includeUppercase, in
     if (passwordLength >= 128){
       alert("Password must be less than 128 characters"); 
       prompt("Please enter password length less than 128 characters.");
+    }
+    if (passwordLength <= 8){
+      alert("Password must be more than 8 characters"); 
+      prompt("Please enter password length more than 8 characters.");
     }
 
   var includeLowercase = confirm("Do you want to include lowercase?")
@@ -75,11 +70,11 @@ var includeNum = confirm("Do you want to include numbers?")
 return password;
 }
 console.log(finalPassword); 
-finalPassword.innerHTML.password;
+finalPassword.textContent.password;
 //promt for length, lowercase, uppercase, num, spec √
 
-//validate and @ least one character
-//passwor generated correctly
+//validate and @ least one character √
+//passwor generated correctly √
 //should be in alert or written to page
 
 
