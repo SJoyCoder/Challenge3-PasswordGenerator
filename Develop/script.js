@@ -25,8 +25,8 @@ function writePassword() {
 function generatePassword(passwordLength, includeLowercase, includeUppercase, includeNum, includeSym) {
   let password = "";
   
-  var passwordLength = prompt("Please enter length of password desired.")
-  passwordLength= parseInt(passwordLength)
+  var passwordLength = prompt("Please enter length of password desired.");
+  passwordLength= parseInt(passwordLength);
     if (passwordLength >= 128){
       alert("Password must be less than 128 characters"); 
       prompt("Please enter password length less than 128 characters.");
@@ -69,8 +69,8 @@ var includeNum = confirm("Do you want to include numbers?")
     
 return password;
 }
-console.log(finalPassword); 
-finalPassword.textContent.password;
+console.log(password); 
+finalPassword.textContent(password);
 //promt for length, lowercase, uppercase, num, spec √
 
 //validate and @ least one character √
