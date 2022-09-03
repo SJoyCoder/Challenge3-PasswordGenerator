@@ -71,7 +71,7 @@ console.log(startingArray);
 
 //validate and @ least one character √
 //passwor generated correctly √
-//should be in alert or written to page
+//should be in alert or written to page √
 
 
 // Add event listener to generate button

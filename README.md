@@ -1,5 +1,10 @@
 # Password Generator Starter Code
 
+![Starting screenshot](./images/Screen%20Shot%202022-09-03%20at%2011.10.37%20AM.png)
+![Lenth input](./images/Screen%20Shot%202022-09-03%20at%2011.11.00%20AM.png)
+![Character input](./images/Screen%20Shot%202022-09-03%20at%2011.11.20%20AM.png)
+![Final output](./images/Screen%20Shot%202022-09-03%20at%2011.11.50%20AM.png)
+
 https://sjoycoder.github.io/Challenge3-PasswordGenerator/
 
 ## About
