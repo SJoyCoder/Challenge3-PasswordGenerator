@@ -2,7 +2,6 @@
 
 var generateBtn = document.querySelector("#generate");
 var startingArray = [];
-var finalPassword = document.querySelector("#password");
 var lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var sym = ["!", "@", "#", "$", "%", "^", "&", "*", "/", "<", ">", "?", "/"];
@@ -70,7 +69,8 @@ var includeNum = confirm("Do you want to include numbers?")
 return password;
 }
 console.log(password); 
-finalPassword.textContent(password);
+console.log(startingArray)
+
 //promt for length, lowercase, uppercase, num, spec √
 
 //validate and @ least one character √
@@ -79,4 +79,4 @@ finalPassword.textContent(password);
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword)
+generateBtn.addEventListener("click", writePassword)
